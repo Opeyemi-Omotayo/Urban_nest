@@ -1,15 +1,11 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Header from '@/components/header/Header'
 
 export default function Home() {
   return (
     <main
-     className="bg-red-500"
+      className="bg-red-500"
     >
-     <h1>Hello</h1>
+      <Header />
     </main>
   )
 }
- 
