@@ -1,5 +1,6 @@
 import Header from '@/components/header/Header';
 import Hero from '@/components/hero/Hero';
+import Search from '@/components/search/Search';
 import Head from 'next/head';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
+      <Search />
     </main>
   )
 }
