@@ -3,21 +3,21 @@ import Button from "../elements/button/Button";
 
 const Navbar = () => {
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-between text-sm h-96 lg:h-0">
-            <li className="mr-0 lg:mr-4">
-                <Link href="/">Home</Link>
+        <div className="flex flex-col lg:flex-row items-center justify-between text-base h-96 lg:h-0 ">
+            <li >
+                <Link href="/" className="mr-0 lg:mr-4 active:text-green-500">HOME</Link>
             </li>
-            <li className="mr-0 lg:mr-4">
-                <Link href="/#about">About</Link>
+            <li >
+                <Link href="/#about" className="mr-0 lg:mr-4 active:text-green-500">ABOUT</Link>
             </li>
-            <li className="mr-0 lg:mr-4">
-                <Link href="/#property">Property</Link>
+            <li>
+                <Link href="/#property" className="mr-0 lg:mr-4 active:text-green-500">PROPERTY</Link>
             </li>
-            <li className="mr-0 lg:mr-4">
-                <Link href="/#testimonial">Testimonial</Link>
+            <li>
+                <Link href="/#testimonial" className="mr-0 lg:mr-4 active:text-green-500">TESTIMONIAL</Link>
             </li>
-            <li className="mr-0 lg:mr-4">
-                <Link href="/#contact">Contact</Link>
+            <li>
+                <Link href="/#contact" className="mr-0 lg:mr-4 active:text-green-500">CONTACT</Link>
             </li>
           <Link href="/login">
             <Button className=" w-40 bg-primary text-white bg-green-500 rounded-lg">

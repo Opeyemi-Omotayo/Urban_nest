@@ -4,7 +4,7 @@ import Head from 'next/head';
 export default function Home() {
   return (
     <main
-    className="bg-[#F6F7F9] mt-8 lg:mt-0"
+    className="bg-[#F6F7F9] mt-8 lg:mt-0 font-Quicksand"
     >
       <Head>
         <title>Urban Nest</title>

@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <>
-            <nav className="font-mono">
+            <nav className="m-8 px-6 bg-white">
                 <div className="items-center justify-between hidden py-4  lg:flex">
                     <h1 className=" text-2xl">
                         Urban Nest
