@@ -5,9 +5,9 @@ import { Carousel } from "react-responsive-carousel";
 
 const Hero = () => {
   return (
-    <section className="flex items-center justify-between flex-col px-4 lg:px-0 lg:flex-row mt-[-7rem] h-[90vh]">
-      <div className=" w-[100%] lg:w-[47%] lg:pl-8 pt-[4rem]">
-        <h1 className="text-3xl pt-[5.5rem] lg:pt-0 lg:text-4xl font-bold pb-4">
+    <section className="flex items-center justify-between flex-col-reverse px-4 lg:px-0 lg:flex-row mt-[-7rem] h-[90vh]">
+      <div className=" w-[100%] lg:w-[47%] lg:pl-8 pt-[2rem] lg:pt-[4rem] ">
+        <h1 className="text-3xl lg:text-4xl font-bold pb-4">
           Find the <span className="text-green-500">perfect home</span>
           <br /> for your family
         </h1>
