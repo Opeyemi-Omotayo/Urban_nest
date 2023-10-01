@@ -28,7 +28,7 @@ const Hero = () => {
                     </div>
                 </Carousel>
             </div> */}
-      <div className=" w-[100%] lg:w-[50%] h-[100%] bg-red-500">
+      <div className=" w-[100%] lg:w-[50%] h-[100%] bg-img2">
        
       </div>
     </section>
