@@ -1,3 +1,4 @@
+import About from "@/components/about/About";
 import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
 import PropertyTypes from "@/components/propertyTypes/PropertyTypes";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Search />
       <PropertyTypes />
+      <About />
     </main>
   );
 }

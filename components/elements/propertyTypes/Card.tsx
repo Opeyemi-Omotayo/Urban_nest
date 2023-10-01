@@ -29,7 +29,7 @@ const Card = () => {
     <>
     {Properties.map(property => (
         <div className="bg-green-200 cursor-pointer h-[200px] w-[100%] flex items-center justify-center">
-      <div className="bg-white flex items-center justify-center flex-col h-[90%] w-[90%] border border-dotted hover:bg-green-400 hover:text-white transition-all duration-500">
+      <div className="bg-white flex items-center justify-center flex-col h-[85%] w-[90%] border border-dotted hover:bg-green-400 hover:text-white transition-all duration-500">
         <div className="border flex items-center justify-center border-dotted bg-white border-green-500 rounded-full h-[80px] w-[80px]">
           <div className="">
             <Image src={property.img} alt="apartment" width={45} height={45} />
