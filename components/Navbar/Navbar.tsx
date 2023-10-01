@@ -3,7 +3,7 @@ import Button from "../elements/button/Button";
 
 const Navbar = () => {
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-between text-base h-96 lg:h-0 ">
+        <div className="flex flex-col lg:flex-row items-center justify-between text-sm h-96 lg:h-0 ">
             <li >
                 <Link href="/" className="mr-0 lg:mr-4 active:text-green-500">HOME</Link>
             </li>

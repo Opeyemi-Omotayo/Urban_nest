@@ -1,10 +1,11 @@
 import Header from '@/components/header/Header';
+import Hero from '@/components/hero/Hero';
 import Head from 'next/head';
 
 export default function Home() {
   return (
     <main
-    className="bg-[#F6F7F9] mt-8 lg:mt-0 font-Quicksand"
+    className=" mt-8 lg:mt-0 font-Quicksand"
     >
       <Head>
         <title>Urban Nest</title>
@@ -15,6 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
+      <Hero />
     </main>
   )
 }
