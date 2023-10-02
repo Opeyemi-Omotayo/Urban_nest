@@ -41,7 +41,7 @@ const Card = () => {
       {agents.map((agent) => (
         <div className="mt-10 overflow-hidden bg-white rounded shadow-md " key={agent.id}>
           <img
-            className="h-[250px] w-[200px]"
+            className="h-[250px] w-[250px]"
             src={agent.image}
             alt={agent.name}
           />

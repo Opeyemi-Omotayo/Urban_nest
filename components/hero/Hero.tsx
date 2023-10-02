@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../elements/button/Button";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import { Sliderify } from "react-sliderify";
 
 const Hero = () => {
   return (
@@ -20,16 +19,19 @@ const Hero = () => {
           Get Started Now
         </Button>
       </div>
-      {/* <div className="w-[50%] h-[100%]">
-                <Carousel autoPlay={true}>
-                    <div className=" bg-img1">
-                    </div>
-                    <div className=" bg-img2">
-                    </div>
-                </Carousel>
-            </div> */}
-      <div className=" w-[100%] lg:w-[50%] h-[100%] bg-img2">
-       
+      <div className="w-[100%] lg:w-[50%] h-[100%]">
+        <Sliderify showNavDots={false}>
+          <img
+            src="https://as2.ftcdn.net/v2/jpg/04/62/81/43/1000_F_462814326_Rg1qXonBpF4T6DAQ8T03LBXIGK497yc9.jpg"
+            alt="house1"
+            className="h-[90vh]"
+          />
+          <img
+            src="https://as2.ftcdn.net/v2/jpg/04/37/54/23/1000_F_437542364_rUKRUDlOQ2ZmVrsijNFUfrhxZO7jyOFg.jpg"
+            alt="house2"
+            className="h-[90vh]"
+          />
+        </Sliderify>
       </div>
     </section>
   );
