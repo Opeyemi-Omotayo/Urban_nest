@@ -18,7 +18,7 @@ const Contact = () => {
 
           <div className="w-[100%] lg:w-[60%] p-4">
             <h1 className="pb-4 text-2xl font-bold lg:text-4xl">
-              Contact With <br/> Our Certified Agent
+              Chat With <br/> Our Certified Agent
             </h1>
             <p className="pb-4 text-sm text-gray-800">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis

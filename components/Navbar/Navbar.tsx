@@ -17,7 +17,7 @@ const Navbar = () => {
                 <Link href="/testimonial" className="mr-0 lg:mr-4 active:text-green-500">TESTIMONIAL</Link>
             </li>
             <li>
-                <Link href="/#contact" className="mr-0 lg:mr-4 active:text-green-500">CONTACT</Link>
+                <Link href="/contact" className="mr-0 lg:mr-4 active:text-green-500">CONTACT</Link>
             </li>
           <Link href="/login">
             <Button className="w-40 text-white bg-green-500 rounded-lg bg-primary">
