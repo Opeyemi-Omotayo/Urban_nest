@@ -11,7 +11,7 @@ const items: ItemsType[] = [
     bed: 2,
     bath: 1,
     measurement: 1500,
-    price: "52",
+    price: "950",
     image: "/assets/berlinhouse.jpg",
     id: 1,
   },
@@ -23,7 +23,7 @@ const items: ItemsType[] = [
     bed: 2,
     bath: 1,
     measurement: 1500,
-    price: "52",
+    price: "52,345",
     image: "/assets/berlinhouse.jpg",
     id: 2,
   },
@@ -35,7 +35,7 @@ const items: ItemsType[] = [
     bed: 2,
     bath: 1,
     measurement: 1500,
-    price: "52",
+    price: "12,123",
     image: "/assets/berlinhouse.jpg",
     id: 3,
   },
@@ -47,7 +47,7 @@ const items: ItemsType[] = [
     bed: 2,
     bath: 1,
     measurement: 1500,
-    price: "52",
+    price: "2,234",
     image: "/assets/berlinhouse.jpg",
     id: 4,
   },
@@ -72,7 +72,7 @@ const Properties = () => {
 
   return (
     <section className="px-4 lg:px-[8rem] mt-[5rem]">
-      <h1 className="text-4xl font-bold pb-4">Property Listing</h1>
+      <h1 className="pb-4 text-4xl font-bold">Property Listing</h1>
       <div className="flex items-center justify-between">
         <h1 className="w-[60%]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
@@ -105,7 +105,7 @@ const Properties = () => {
           </li>
         </ul>
       </div>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden ">
+      <section className="grid grid-cols-1 gap-6 mt-12 overflow-hidden md:grid-cols-2 lg:grid-cols-3 ">
       {properties.map((property) => (
           <Card key={property.id} property={property} />
         ))}

@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <main className=" mt-8 lg:mt-0 font-Quicksand">
+    <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
       <Head>
         <title>Urban Nest</title>
         <meta name="description" content="The Best Platform for real estate" />
