@@ -14,7 +14,7 @@ const Navbar = () => {
                 <Link href="/properties" className="mr-0 lg:mr-4 active:text-green-500">PROPERTY</Link>
             </li>
             <li>
-                <Link href="/#testimonial" className="mr-0 lg:mr-4 active:text-green-500">TESTIMONIAL</Link>
+                <Link href="/testimonial" className="mr-0 lg:mr-4 active:text-green-500">TESTIMONIAL</Link>
             </li>
             <li>
                 <Link href="/#contact" className="mr-0 lg:mr-4 active:text-green-500">CONTACT</Link>
