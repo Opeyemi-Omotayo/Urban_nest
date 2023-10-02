@@ -105,7 +105,7 @@ const Properties = () => {
           </li>
         </ul>
       </div>
-      <section className="grid grid-cols-1 gap-6 mt-12 overflow-hidden md:grid-cols-2 lg:grid-cols-3 ">
+      <section className="grid grid-cols-1 gap-6 mt-12 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
       {properties.map((property) => (
           <Card key={property.id} property={property} />
         ))}
