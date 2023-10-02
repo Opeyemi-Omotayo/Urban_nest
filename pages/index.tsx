@@ -1,4 +1,5 @@
 import About from "@/components/about/About";
+import Contact from "@/components/contact/Contact";
 import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
 import Properties from "@/components/properties/Properties";
@@ -20,6 +21,7 @@ export default function Home() {
       <PropertyTypes />
       <About />
       <Properties />
+      <Contact />
     </main>
   );
 }
