@@ -73,12 +73,12 @@ const Properties = () => {
   return (
     <section className="px-4 lg:px-[8rem] mt-[5rem]">
       <h1 className="pb-4 text-4xl font-bold">Property Listing</h1>
-      <div className="flex items-center justify-between">
-        <h1 className="w-[60%]">
+      <div className="flex flex-col items-center justify-between lg:flex-row">
+        <h1 className="w-[100%] lg:w-[60%] pb-4">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
           dignissimos aspernatur ratione maxime aperiam optio.
         </h1>
-        <ul className="justify-between hidden space-x-10 font-medium text-gray-500 cursor-pointer md:flex">
+        <ul className="flex justify-between space-x-4 font-medium text-gray-500 cursor-pointer lg:space-x-10 md:flex">
           <li
             onClick={() => handleFilter("all")}
             className={`cursor-pointer border border-green-500 w-[80px] rounded-md shadow-md text-center  py-2 ${

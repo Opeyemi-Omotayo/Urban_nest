@@ -10,7 +10,7 @@ const Card = ({ property }: { property: ItemsType }) => {
     <div className='bg-white rounded-md shadow-md'>
       <div className="overflow-hidden rounded ">
         <div className="relative overflow-hidden">
-          <Image src={property.image} width={350} height={150} alt='house ' />
+          <img src={property.image} alt='house' />
           <div className="absolute top-0 px-3 py-1 m-4 text-white bg-green-500 rounded start-0">For {property.propertyInfo}</div>
           <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 bg-white rounded start-0">{property.propertyType}</div>
         </div>
