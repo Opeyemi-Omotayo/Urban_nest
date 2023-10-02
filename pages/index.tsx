@@ -7,6 +7,7 @@ import Properties from "@/components/properties/Properties";
 import PropertyAgents from "@/components/propertyAgents/PropertyAgents";
 import PropertyTypes from "@/components/propertyTypes/PropertyTypes";
 import Search from "@/components/search/Search";
+import Testimonial from "@/components/testimonial/Testimonial";
 import Head from "next/head";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <Properties />
       <Contact />
       <PropertyAgents />
+      <Testimonial />
       <Footer />
     </main>
   );
