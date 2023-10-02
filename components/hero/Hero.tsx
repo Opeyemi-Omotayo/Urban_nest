@@ -1,22 +1,21 @@
 import React from "react";
 import Button from "../elements/button/Button";
 import { Sliderify } from "react-sliderify";
+import { HeroProps } from "@/types/types";
 
-const Hero = () => {
+
+const Hero: React.FC<HeroProps> = ({ title, description, buttonText }) => {
   return (
     <section className="flex items-center bg-gray-50 justify-between flex-col-reverse px-4 lg:px-0 lg:flex-row mt-[-7rem] h-[90vh]">
       <div className=" w-[100%] lg:w-[47%] lg:pl-8 pt-[2rem] lg:pt-[4rem]  ">
         <h1 className="pb-4 text-3xl font-bold lg:text-4xl">
-          Find the <span className="text-green-500">perfect home</span>
-          <br /> for your family
+        {title}
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat
-          consequatur aperiam omnis est facere fugiat esse mollitia pariatur vel
-          facilis!
+        {description}
         </p>
         <Button className="w-40 my-8 text-white bg-green-500 rounded-lg bg-primary animate-bounce">
-          Get Started Now
+        {buttonText}
         </Button>
       </div>
       <div className="w-[100%] lg:w-[50%] h-[100%]">

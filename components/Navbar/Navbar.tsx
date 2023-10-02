@@ -3,15 +3,15 @@ import Button from "../elements/button/Button";
 
 const Navbar = () => {
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-between text-sm h-96 lg:h-0 ">
+        <div className="flex flex-col items-center justify-between text-sm lg:flex-row h-96 lg:h-0 ">
             <li >
                 <Link href="/" className="mr-0 lg:mr-4 active:text-green-500">HOME</Link>
             </li>
             <li >
-                <Link href="/#about" className="mr-0 lg:mr-4 active:text-green-500">ABOUT</Link>
+                <Link href="/about" className="mr-0 lg:mr-4 active:text-green-500">ABOUT</Link>
             </li>
             <li>
-                <Link href="/#property" className="mr-0 lg:mr-4 active:text-green-500">PROPERTY</Link>
+                <Link href="/properties" className="mr-0 lg:mr-4 active:text-green-500">PROPERTY</Link>
             </li>
             <li>
                 <Link href="/#testimonial" className="mr-0 lg:mr-4 active:text-green-500">TESTIMONIAL</Link>
@@ -20,7 +20,7 @@ const Navbar = () => {
                 <Link href="/#contact" className="mr-0 lg:mr-4 active:text-green-500">CONTACT</Link>
             </li>
           <Link href="/login">
-            <Button className=" w-40 bg-primary text-white bg-green-500 rounded-lg">
+            <Button className="w-40 text-white bg-green-500 rounded-lg bg-primary">
               Get Started Now
             </Button>
           </Link>

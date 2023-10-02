@@ -11,15 +11,21 @@ import Testimonial from "@/components/testimonial/Testimonial";
 import Head from "next/head";
 
 export default function Home() {
+  const heroContent = {
+    title: "Find the perfect home for your family",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat consequatur aperiam omnis est facere fugiat esse mollitia pariatur vel facilis!",
+    buttonText: "Get Started Now"
+  };
+  
   return (
-    <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
+    <main>
       <Head>
         <title>Urban Nest</title>
         <meta name="description" content="The Best Platform for real estate" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Header />
-      <Hero />
+      <Hero {...heroContent}/>
       <Search />
       <PropertyTypes />
       <About />
@@ -27,7 +33,6 @@ export default function Home() {
       <Contact />
       <PropertyAgents />
       <Testimonial />
-      <Footer />
     </main>
   );
 }

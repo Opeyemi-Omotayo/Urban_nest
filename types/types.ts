@@ -23,3 +23,10 @@ export type AgentsType = {
     image: string;
     id: number;
 }
+
+export type HeroProps = {
+    title: string;
+    description?: string;
+    buttonText?: string;
+}
+  

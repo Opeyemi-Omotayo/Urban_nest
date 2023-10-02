@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-    <footer id="footer" className=" py-10 pb-4 mx-auto px-[25px] lg:px-[45px] bg-white ">
+    <footer id="footer" className=" py-10 pb-4 mx-auto px-[25px] lg:px-[45px] bg-white mt-4 ">
       <div className="flex flex-col justify-between lg:flex-row ">
         <section className="lg:max-w-[250px] max-w-[280px] space-y-2">
           <h2 className="text-2xl font-bold">Urban Nest</h2>
