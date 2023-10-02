@@ -6,7 +6,7 @@ const items: ItemsType[] = [
   {
     name: "Beautiful Duplex",
     propertyType: "Apartment",
-    propertyInfo: "rent",
+    propertyInfo: "Rent",
     location: "Berlin, Germany",
     bed: 2,
     bath: 1,
@@ -18,7 +18,7 @@ const items: ItemsType[] = [
   {
     name: "Beautiful Duplex",
     propertyType: "Apartment",
-    propertyInfo: "buy",
+    propertyInfo: "Buy",
     location: "Berlin, Germany",
     bed: 2,
     bath: 1,
@@ -30,7 +30,7 @@ const items: ItemsType[] = [
   {
     name: "Beautiful Duplex",
     propertyType: "Apartment",
-    propertyInfo: "rent",
+    propertyInfo: "Rent",
     location: "Berlin, Germany",
     bed: 2,
     bath: 1,
@@ -42,7 +42,7 @@ const items: ItemsType[] = [
   {
     name: "Beautiful Duplex",
     propertyType: "Apartment",
-    propertyInfo: "rent",
+    propertyInfo: "Rent",
     location: "Berlin, Germany",
     bed: 2,
     bath: 1,

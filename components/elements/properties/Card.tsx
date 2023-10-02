@@ -11,7 +11,7 @@ const Card = ({ property }: { property: ItemsType }) => {
       <div className="overflow-hidden rounded ">
         <div className="relative overflow-hidden">
           <img src={property.image} alt='house' />
-          <div className="absolute top-0 px-3 py-1 m-4 text-white bg-green-500 rounded start-0">For {property.propertyInfo}</div>
+          <div className="absolute top-0 px-3 py-1 m-4 text-white bg-green-500 rounded start-0">{property.propertyInfo}</div>
           <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 bg-white rounded start-0">{property.propertyType}</div>
         </div>
         <div className="p-4 pb-0">

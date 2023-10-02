@@ -6,8 +6,8 @@ const About = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-[8rem] mt-[5.5rem]">
       <div className="flex items-center w-[100%] lg:w-[47%] ">
-        <div className="w-[60%] h-[450px] clip-path bg-green-500"></div>
-        <div className="ml-[-11rem] lg:ml-[-15rem] z-[9999] w-[100%] h-[400px] bg-cover bg-img1"></div>
+        <div className="w-[60%] h-[450px] shadow-lg clip-path bg-green-500"></div>
+        <div className="ml-[-11rem] lg:ml-[-15rem] z-[9999] shadow-lg w-[100%] h-[400px] bg-cover bg-img1"></div>
       </div>
       <div className="w-[100%] lg:w-[47%] mt-8 lg:mt-0">
         <h1 className="pb-4 text-3xl font-bold lg:text-4xl">#1 Place To Find The Perfect Property </h1>

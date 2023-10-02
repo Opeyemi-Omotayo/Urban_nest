@@ -15,4 +15,11 @@ export type ItemsType = {
     price: string;
     image: string;
     id: number;
+} 
+
+export type AgentsType = {
+    name: string;
+    designation: string;
+    image: string;
+    id: number;
 }
