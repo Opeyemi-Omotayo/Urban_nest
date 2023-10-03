@@ -3,7 +3,7 @@ import Card from "../elements/properties/Card";
 import { PropertyTypes } from "@/types/types";
 import Supabase from "../supabase/supabase";
 
-const Properties = () => {
+const Properties = () => { 
   const [activeFilter, setActiveFilter] = useState("all");
   const [properties, setProperties] = React.useState<null | any>(null);
   const [filteredProperties, setFilteredProperties] = React.useState<PropertyTypes[] | null>(null);
