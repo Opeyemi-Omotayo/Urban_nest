@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const Card = ({ property }: { property: ItemsType }) => {
   return (
-    <Link href={`/details/${property.id}`}>
+    <Link href={`/properties/details/${property.id}`}>
       <div className='bg-white rounded-md shadow-md mt-12'>
         <div className="overflow-hidden rounded ">
           <div className="relative overflow-hidden">
