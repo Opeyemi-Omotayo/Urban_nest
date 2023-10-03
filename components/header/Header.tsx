@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TfiClose } from "react-icons/tfi";
 import { AiOutlineAlignRight } from "react-icons/ai";
-import Navbar from "../navbar/Navbar";
+import NavBar from "../navBar/NavBar";
 
 const Header = () => {
     const [nav, setNav] = useState(false);
@@ -33,7 +33,7 @@ const Header = () => {
                     </h1>
 
                     <ul>
-                        <Navbar />
+                       <NavBar />
                     </ul>
                 </div>
 
@@ -45,7 +45,7 @@ const Header = () => {
                         className={`absolute top-[63px] z-20 items-center w-full left-0 py-10  h-full ${nav ? "block" : "hidden"
                             }`}
                     >
-                        <Navbar />
+                        <NavBar />
                     </ul>
                     <div
                         className="block text-3xl lg:hidden"

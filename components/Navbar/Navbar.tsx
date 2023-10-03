@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Button from "../elements/button/Button";
 
-const Navbar = () => {
+const NavBar = () => {
     return (
         <div className="flex flex-col items-center justify-between text-sm lg:flex-row h-96 lg:h-0 ">
             <li >
@@ -28,4 +28,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavBar;
