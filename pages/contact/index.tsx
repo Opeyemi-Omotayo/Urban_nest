@@ -2,6 +2,7 @@ import Contact from "@/components/contact/Contact";
 import Hero from "@/components/hero/Hero";
 import Search from "@/components/search/Search";
 import React from "react";
+import Head from "next/head";
 
 const index = () => {
   const heroContent = {
@@ -13,6 +14,11 @@ const index = () => {
 
   return (
     <section>
+      <Head>
+        <title>Urban Nest || Contact</title>
+        <meta name="description" content="The Best Platform for real estate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Hero {...heroContent} />
       <Search />
       <Contact />
