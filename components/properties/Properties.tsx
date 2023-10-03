@@ -1,70 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../elements/properties/Card";
-import { ItemsType } from "@/types/types";
-
-const items: ItemsType[] = [
-  {
-    name: "Beautiful Duplex",
-    propertyType: "Apartment",
-    propertyInfo: "Rent",
-    location: "Berlin, Germany",
-    bed: 2,
-    bath: 1,
-    measurement: 1500,
-    price: "950",
-    image: "/assets/berlinhouse.jpg",
-    id: 1,
-  },
-  {
-    name: "Beautiful Duplex",
-    propertyType: "Apartment",
-    propertyInfo: "Buy",
-    location: "Berlin, Germany",
-    bed: 2,
-    bath: 1,
-    measurement: 1500,
-    price: "52,345",
-    image: "/assets/berlinhouse.jpg",
-    id: 2,
-  },
-  {
-    name: "Beautiful Duplex",
-    propertyType: "Apartment",
-    propertyInfo: "Rent",
-    location: "Berlin, Germany",
-    bed: 2,
-    bath: 1,
-    measurement: 1500,
-    price: "12,123",
-    image: "/assets/berlinhouse.jpg",
-    id: 3,
-  },
-  {
-    name: "Beautiful Duplex",
-    propertyType: "Apartment",
-    propertyInfo: "Rent",
-    location: "Berlin, Germany",
-    bed: 2,
-    bath: 1,
-    measurement: 1500,
-    price: "2,234",
-    image: "/assets/berlinhouse.jpg",
-    id: 4,
-  },
-];
+import { PropertyTypes } from "@/types/types";
+import Supabase from "../supabase/supabase";
 
 const Properties = () => {
-  const [properties, setProperties] = useState(items);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [properties, setProperties] = React.useState<null | any>(null);
+  const [filteredProperties, setFilteredProperties] = React.useState<PropertyTypes[] | null>(null);
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        let { data, error } = await Supabase.from('properties').select();
+        if (error) {
+          console.error("Error fetching data from Supabase:", error);
+        } else {
+          setProperties(data);
+          setFilteredProperties(data);
+        }
+      } catch (err) {
+        console.error("An error occurred:", err);
+      }
+    };
+  
+    fetchProperties();
+  }, []);
 
   const handleFilter = (value: string) => {
     setActiveFilter(value);
     if (value === "all") {
-      setProperties(items);
+      setFilteredProperties(properties);
     } else {
-      setProperties(
-        items.filter(
-          (item) => item.propertyInfo.toLowerCase() === value.toLowerCase()
+      setFilteredProperties(
+        properties.filter(
+          (property:any) => property.propertyInfo.toLowerCase() === value.toLowerCase()
         )
       );
     }
@@ -106,7 +75,7 @@ const Properties = () => {
         </ul>
       </div>
       <section className="grid grid-cols-1 gap-6 mt-12 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
-      {properties.map((property) => (
+      {filteredProperties?.map((property:any) => (
           <Card key={property.id} property={property} />
         ))}
       </section>

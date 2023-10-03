@@ -10,13 +10,13 @@ const Card = ({ property }: { property: ItemsType }) => {
     <div className='bg-white rounded-md shadow-md'>
       <div className="overflow-hidden rounded ">
         <div className="relative overflow-hidden">
-          <img src={property.image} alt='house' />
-          <div className="absolute top-0 px-3 py-1 m-4 text-white bg-green-500 rounded start-0">{property.propertyInfo}</div>
-          <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 bg-white rounded start-0">{property.propertyType}</div>
+          <img src={property.image} alt='house' className='h-[200px] w-full'/>
+          <div className="absolute capitalize top-0 px-3 py-1 m-4 text-white bg-green-500 rounded start-0">{property.propertyInfo}</div>
+          <div className="absolute capitalize bottom-0 px-3 pt-1 mx-4 text-green-500 bg-white rounded start-0">{property.propertyType}</div>
         </div>
         <div className="p-4 pb-0">
           <h5 className="mb-3 font-semibold text-green-500">${property.price}</h5>
-          <a className="block mb-2 text-xl font-bold" href="">{property.name}</a>
+          <a className="block mb-2 text-lg capitalize font-bold" href="">{property.name}</a>
           <p className='flex items-center pb-4 text-gray-800'><BsGeoAlt className="text-green-500 me-2" />{property.location}</p>
         </div>
         <div className="flex items-center justify-around text-gray-800 border-t">
