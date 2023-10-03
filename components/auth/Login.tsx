@@ -1,16 +1,26 @@
-import React from "react";
-// import Button from "../elements/button/Button";
-// import Image from "next/image";
-// import Link from "next/link";
+import React, { useEffect} from "react";
 import { Sliderify } from "react-sliderify";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import Supabase from "../supabase/supabase";
+import { useRouter } from "next/router";
+
 
 const Login = () => {
+  const router = useRouter();
+  useEffect(() => {
+    Supabase.auth.onAuthStateChange(async (event) => {
+      if (event === "SIGNED_OUT") {
+        router.push("/");
+      } else if (event === "SIGNED_IN") {
+        router.push("/dashboard");
+      }
+    });
+  }, []);
 
   return (
-    <main className="container flex justify-between w-full h-full px-5 py-10 mx-auto overflow-y-hidden lg:px-10 md:space-x-10">
-        <div className="w-[100%] lg:w-[50%] h-[100%]">
+    <section className="flex items-center bg-gray-50 justify-between flex-col px-4 lg:px-0 lg:flex-row mt-[-7rem] h-[90vh]">
+      <div className="w-[100%] lg:w-[50%] h-[100%] hidden lg:flex">
         <Sliderify showNavDots={false}>
           <img
             src="https://as2.ftcdn.net/v2/jpg/04/62/81/43/1000_F_462814326_Rg1qXonBpF4T6DAQ8T03LBXIGK497yc9.jpg"
@@ -24,11 +34,22 @@ const Login = () => {
           />
         </Sliderify>
       </div>
-
-      <div className="w-full md:w-5/12">
-        <h1>hello</h1>
+      <div className=" w-[100%] lg:w-[47%] lg:pl-8 p-[2rem] lg:p-[4rem]  ">
+        <div className="pt-[7rem]">
+        <Auth
+          supabaseClient={Supabase}
+          providers={[]}
+          appearance={{
+            theme: ThemeSupa,
+            style: {
+              button: { background: "#3563E9", color: "white", height: "48px" },
+              anchor: { color: "black" },
+            },
+          }}
+        />
+        </div>
       </div>
-    </main>
+    </section>
   );
 };
 
