@@ -5,8 +5,8 @@ import Supabase from "../supabase/supabase";
 
 const Properties = () => { 
   const [activeFilter, setActiveFilter] = useState("all");
-  const [properties, setProperties] = React.useState<null | any>(null);
-  const [filteredProperties, setFilteredProperties] = React.useState<PropertyTypes[] | null>(null);
+  const [properties, setProperties] = useState<null | any>(null);
+  const [filteredProperties, setFilteredProperties] = useState<PropertyTypes[] | null>(null);
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -74,7 +74,7 @@ const Properties = () => {
           </li>
         </ul>
       </div>
-      <section className="grid grid-cols-1 gap-6 mt-12 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
       {filteredProperties?.map((property:any) => (
           <Card key={property.id} property={property} />
         ))}

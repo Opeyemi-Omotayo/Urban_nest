@@ -36,4 +36,10 @@ export type HeroProps = {
     description?: string;
     buttonText?: string;
 }
+
+export type TabsTypes = {
+    title: React.ReactNode;
+    query: string;
+  };
+  
   

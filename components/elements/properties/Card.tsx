@@ -7,7 +7,7 @@ import { IoMdBed } from 'react-icons/io';
 
 const Card = ({ property }: { property: ItemsType }) => {
   return (
-    <div className='bg-white rounded-md shadow-md'>
+    <div className='bg-white rounded-md shadow-md mt-12'>
       <div className="overflow-hidden rounded ">
         <div className="relative overflow-hidden">
           <img src={property.image} alt='house' className='h-[200px] w-full'/>
