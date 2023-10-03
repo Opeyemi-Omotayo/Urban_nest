@@ -9,10 +9,10 @@ const Search = () => {
                 <option value="buy">Buy</option>
             </select>
             <select id="location" name="location" className='w-[80%] mb-2 lg:mb-0 lg:w-[33%] px-4 py-3 rounded-lg outline-none'>
-                <option value="rent">Berlin</option>
-                <option value="buy">Munich</option>
-                <option value="rent">Hamburg</option>
-                <option value="buy">Cologne</option>
+                <option value="berlin">Berlin</option>
+                <option value="munich">Munich</option>
+                <option value="hamburg">Hamburg</option>
+                <option value="cologne">Cologne</option>
             </select>
             <Button className="w-[70%] lg:w-[23%] bg-primary px-4 py-3 text-white bg-green-700 shadow-lg rounded-lg">Search</Button>
         </section>
