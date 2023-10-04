@@ -31,7 +31,7 @@ const Card = () => {
         navNextIcon={<RightArrow className="text-2xl text-green-500" />}
       >
         {testimonials?.map((testimonial: any) => (
-          <div className="flex items-center justify-center mx-8 bg-green-200 shadow-md">
+          <div className="flex items-center justify-center mx-8 bg-green-200 shadow-md" key={testimonial.id}>
             <div className="bg-white h-[90%] w-[95%] my-3 border border-dotted p-4 ">
               <p>{testimonial.review}</p>
               <div className="flex items-center justify-start pt-4">
