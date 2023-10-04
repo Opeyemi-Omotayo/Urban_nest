@@ -25,7 +25,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className="mx-4 lg:mx-[8rem] mt-[4rem] container">
+    <div className="mx-4 lg:mx-[12rem] 2xl:px-[18rem] mt-10" data-aos="fade-up">
       <Sliderify
         navPrevIcon={<LeftArrow className="text-2xl text-green-500" />}
         navNextIcon={<RightArrow className="text-2xl text-green-500" />}
@@ -33,7 +33,7 @@ const Card = () => {
         {testimonials?.map((testimonial: any) => (
           <div className="flex items-center justify-center mx-8 bg-green-200 shadow-md" key={testimonial.id}>
             <div className="bg-white h-[90%] w-[95%] my-3 border border-dotted p-4 ">
-              <p>{testimonial.review}</p>
+              <p className="text-sm md:text-base">{testimonial.review}</p>
               <div className="flex items-center justify-start pt-4">
                 <img
                   src={testimonial.image}
@@ -41,7 +41,7 @@ const Card = () => {
                   className="mr-8 w-14 h-14"
                 />
                 <div>
-                  <h1 className="text-xl font-bold">{testimonial.fullName}</h1>
+                  <h1 className="text-lg font-bold">{testimonial.fullName}</h1>
                   <small>{testimonial.occupation}</small>
                 </div>
               </div>

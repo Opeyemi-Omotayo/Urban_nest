@@ -6,8 +6,8 @@ import { HeroProps } from "@/types/types";
 
 const Hero: React.FC<HeroProps> = ({ title, description, buttonText }) => {
   return (
-    <section className="flex items-center bg-gray-50 justify-between flex-col-reverse px-4 lg:px-0 lg:flex-row mt-[-7rem] h-[90vh]">
-      <div className=" w-[100%] lg:w-[47%] lg:pl-8 pt-[2rem] lg:pt-[4rem]  ">
+    <section className="flex items-center bg-gray-50 justify-between flex-col-reverse lg:flex-row mt-[-7rem] h-[90vh]">
+      <div className=" w-[100%] lg:w-[47%] lg:pl-8 xl:pl-12 2xl:pl-16 pt-[2rem] lg:pt-[4rem] px-4 lg:px-0 ">
         <h1 className="pb-4 text-3xl font-bold lg:text-4xl">
         {title}
         </h1>

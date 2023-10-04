@@ -29,6 +29,7 @@ export type AgentsType = {
     designation: string;
     image: string;
     id: number;
+    duration: number;
 }
 
 export type HeroProps = {

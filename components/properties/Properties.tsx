@@ -40,14 +40,14 @@ const Properties = () => {
   };
 
   return (
-    <section className="px-4 lg:px-[8rem] mt-[5rem]">
-      <h1 className="pb-4 text-4xl font-bold">Property Listing</h1>
+    <section className="px-4 lg:px-[8rem] 2xl:px-[12rem] mt-[4rem]">
+      <h1 className="pb-4 text-4xl font-bold" data-aos="fade-right">Property Listing</h1>
       <div className="flex flex-col items-center justify-between lg:flex-row">
-        <h1 className="w-[100%] lg:w-[60%] pb-4">
+        <h1 className="w-[100%] lg:w-[60%] pb-4" data-aos="fade-right">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
           dignissimos aspernatur ratione maxime aperiam optio.
         </h1>
-        <ul className="flex justify-between space-x-4 font-medium text-gray-500 cursor-pointer lg:space-x-10 md:flex">
+        <ul className="flex justify-between space-x-4 font-medium text-gray-500 cursor-pointer lg:space-x-10 md:flex" data-aos="fade-left">
           <li
             onClick={() => handleFilter("all")}
             className={`cursor-pointer border border-green-500 w-[80px] rounded-md shadow-md text-center  py-2 ${
@@ -74,7 +74,7 @@ const Properties = () => {
           </li>
         </ul>
       </div>
-      <section className="grid grid-cols-1 gap-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-6 mt-10 overflow-hidden md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
       {filteredProperties?.map((property:any) => (
           <Card key={property.id} property={property} />
         ))}

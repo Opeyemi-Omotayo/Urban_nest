@@ -8,16 +8,16 @@ import Link from 'next/link';
 const Card = ({ property }: { property: ItemsType }) => {
   return (
     <Link href={`/properties/details/${property.id}`}>
-      <div className='bg-white rounded-md shadow-md mt-12'>
+      <div className='bg-white rounded-md shadow-md' data-aos="fade-in">
         <div className="overflow-hidden rounded ">
           <div className="relative overflow-hidden">
             <img src={property.image} alt='house' className='h-[200px] w-full' />
-            <div className="absolute capitalize top-0 px-3 py-1 m-4 text-white bg-green-500 rounded start-0">{property.propertyInfo}</div>
-            <div className="absolute capitalize bottom-0 px-3 pt-1 mx-4 text-green-500 bg-white rounded start-0">{property.propertyType}</div>
+            <div className="absolute top-0 px-3 py-1 m-4 text-white capitalize bg-green-500 rounded start-0">{property.propertyInfo}</div>
+            <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 capitalize bg-white rounded start-0">{property.propertyType}</div>
           </div>
           <div className="p-4 pb-0">
             <h5 className="mb-3 font-semibold text-green-500">${property.price}</h5>
-            <a className="block mb-2 text-lg capitalize font-bold" href="">{property.name}</a>
+            <h1 className="block mb-2 text-lg font-bold capitalize">{property.name}</h1>
             <p className='flex items-center pb-4 text-gray-800'><BsGeoAlt className="text-green-500 me-2" />{property.location}</p>
           </div>
           <div className="flex items-center justify-around text-gray-800 border-t">

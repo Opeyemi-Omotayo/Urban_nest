@@ -11,6 +11,7 @@ const agents: AgentsType[] = [
     image:
       "https://as2.ftcdn.net/v2/jpg/06/17/81/87/1000_F_617818750_ThLMPe2lsrVVWwEuhOfmckZK2HoLzSeU.jpg",
     id: 1,
+    duration: 1000
   },
   {
     name: "Gu Pyeon",
@@ -18,6 +19,7 @@ const agents: AgentsType[] = [
     image:
       "https://as1.ftcdn.net/v2/jpg/06/22/97/04/1000_F_622970467_0WcOoNRByzC0ZBZxMNjPIWqgdLogm5yR.jpg",
     id: 2,
+    duration: 1200
   },
   {
     name: "Justina Wills",
@@ -25,6 +27,7 @@ const agents: AgentsType[] = [
     image:
       "https://as2.ftcdn.net/v2/jpg/03/07/47/41/1000_F_307474173_RAULm4v7AFinHJ7Lr0IjQIg7UjignJv4.jpg",
     id: 3,
+    duration: 1400
   },
   {
     name: "Grace Omotayo",
@@ -32,6 +35,7 @@ const agents: AgentsType[] = [
     image:
       "https://as2.ftcdn.net/v2/jpg/04/86/59/89/1000_F_486598909_Fe7C8zNiF6okC3tgfUQCtr1V1DFu3Ler.jpg",
     id: 4,
+    duration: 1600
   },
 ];
 
@@ -39,9 +43,9 @@ const Card = () => {
   return (
     <>
       {agents.map((agent) => (
-        <div className="mt-10 overflow-hidden bg-white rounded shadow-md " key={agent.id}>
+        <div className="overflow-hidden bg-white rounded shadow-md " key={agent.id} data-aos="fade-up" data-aos-duration={agent.duration}>
           <img
-            className="h-[250px] w-[250px]"
+            className="h-[250px] w-full"
             src={agent.image}
             alt={agent.name}
           />

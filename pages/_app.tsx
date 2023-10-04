@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import "@/styles/globals.css";
@@ -11,11 +11,11 @@ import "aos/dist/aos.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  useLayoutEffect(() => {
-    AOS.init({ duration: 1900, once: true });
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
     AOS.refresh();
   });
-  
+
   return (
     <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
       {router.pathname.includes("dashboard") ? null : <Header />}

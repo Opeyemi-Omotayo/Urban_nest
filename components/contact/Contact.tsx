@@ -5,7 +5,7 @@ import { SlCalender } from "react-icons/sl";
 
 const Contact = () => {
   return (
-    <div className="bg-green-200 flex items-center justify-center mx-4 lg:mx-[8rem] mt-[4rem] shadow-md">
+    <div className="bg-green-200 flex items-center justify-center mx-4 lg:mx-[8rem] 2xl:mx-[12rem] mt-[4rem] shadow-md" data-aos="fade-in">
       <div className="bg-white h-[90%] w-[95%] my-3 border border-dotted ">
         <div className="flex items-center flex-col lg:flex-row justify-between h-[100%]">
            <div className=" w-full lg:w-[40%] mb-4 lg:mb-0 ">
