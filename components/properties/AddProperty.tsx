@@ -1,4 +1,6 @@
 import React from 'react';
+import Input from '../elements/input/Input';
+import { VALIDATOR_REQUIRE } from '@/validation/Validation';
 
 const AddProperty = () => {
   return (
@@ -8,6 +10,16 @@ const AddProperty = () => {
             <label htmlFor='name'>Name</label>
             <input type='text' id='name' />
         </div> 
+        <Input
+            id="name"
+            element="input"
+            type="text"
+            label="Name"
+            placeholder="Enter the description of the property"
+            validators={[VALIDATOR_REQUIRE()]}
+            errorText="Please enter your correct email address."
+            onInput={}
+          />
         <div>
             <h1>Property Type</h1>
         <select id="propertyType" name="propertyType" className='w-[80%] mb-2 lg:mb-0 lg:w-[33%] px-4 py-3 rounded-lg outline-none'>
@@ -49,7 +61,16 @@ const AddProperty = () => {
             <label htmlFor='measurement'>Measurement</label>
             <input type='text' id='measurement' />
         </div> 
-       
+        <Input
+            id="email"
+            element="input"
+            type="text"
+            label="Email"
+            placeholder="Enter your email address"
+            validators={[VALIDATOR_EMAIL()]}
+            errorText="Please enter your correct email address."
+            onInput={inputHandler}
+          />
       </form>
     </div>
   )
