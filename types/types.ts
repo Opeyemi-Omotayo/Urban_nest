@@ -43,4 +43,9 @@ export type TabsTypes = {
     query: string;
   };
   
-  
+  export type ImageUploadProps = {
+    id: string;
+    onInput: (id: string, pickedFile: File | undefined, fileIsValid: boolean) => void;
+    errorText: string;
+    center?: boolean;
+  }
