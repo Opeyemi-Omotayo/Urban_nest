@@ -13,6 +13,7 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import Supabase from "@/components/supabase/supabase";
 import { TabsTypes } from "@/types/types";
+import AddProperty from "./AddProperty";
 
 const tabs: TabsTypes[] = [
   {
@@ -40,12 +41,21 @@ const tabs: TabsTypes[] = [
     ),
     query: "reimburse",
   },
+  {
+    title: (
+      <div className="flex items-center">
+        <BiTask /> <span className="pl-2">Add a property</span>
+      </div>
+    ),
+    query: "addProperty",
+  },
 ];
 
 const TabsComponent: any = {
   dashboard: Dashboard,
   rentals: Rentals,
   reimburse: Reimburse,
+  addProperty: AddProperty,
 };
 
 const Tabs = () => {

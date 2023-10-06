@@ -2,8 +2,10 @@ import React from "react";
 import Input from "../elements/input/Input";
 import { VALIDATOR_REQUIRE } from "@/validation/Validation";
 import { useForm } from "@/hooks/useForm";
+import Button from "../elements/button/Button";
+import Supabase from "../supabase/supabase";
 
-const AddProperty = () => {
+const PropertyForm = () => {
   const [formState, inputHandler] = useForm(
     {
       name: {
@@ -42,9 +44,39 @@ const AddProperty = () => {
     false
   );
 
+  const inputData = {
+    name: formState.inputs.name?.value,
+    propertyType: formState.inputs.propertyType?.value,
+    propertyInfo: formState.inputs.propertyInfo?.value,
+    location: formState.inputs.location?.value,
+    bed: formState.inputs.bed?.value,
+    bath: formState.inputs.bath?.value,
+    measurement: formState.inputs.measurement?.value,
+    price: formState.inputs.price?.value,
+    image: formState.inputs.image?.value,
+}
+
+  
+
+  const addProperty = async(e: any) => {
+    e.preventDefault();
+    try {
+        let { data, error } = await Supabase.from('properties').insert(inputData);
+        if (error) {
+          console.error("Error fetching data from Supabase:", error);
+        } else {
+            console.log('Data inserted successfully:', data);
+        }
+      } catch (err) {
+        console.error("An error occurred:", err);
+      }
+  }
+
+  
+
   return (
     <div>
-      <form>
+      <form onSubmit={addProperty}>
         <Input
           id="name"
           element="input"
@@ -60,13 +92,13 @@ const AddProperty = () => {
           element="select"
           label="Property Type"
           options={[
-            { value: "", displayValue: "Enter the type of property" },
+            { value: "", displayValue: "Enter the type of the property" },
             { value: "apartment", displayValue: "Apartment" },
             { value: "building", displayValue: "Building" },
             { value: "office", displayValue: "Office" },
           ]}
           validators={[VALIDATOR_REQUIRE()]}
-          errorText="Please enter the type of property here."
+          errorText="Please enter the type of the property here."
           onInput={inputHandler}
         />
         <Input
@@ -74,12 +106,12 @@ const AddProperty = () => {
           element="select"
           label="Property Info"
           options={[
-            { value: "", displayValue: "Enter the info of property" },
+            { value: "", displayValue: "Enter the info of the property" },
             { value: "rent", displayValue: "Rent" },
             { value: "buy", displayValue: "Buy" },
           ]}
           validators={[VALIDATOR_REQUIRE()]}
-          errorText="Please enter the info of property here."
+          errorText="Please enter the info of the property here."
           onInput={inputHandler}
         />
         <Input
@@ -110,7 +142,7 @@ const AddProperty = () => {
         <Input
           id="bed"
           element="input"
-          type="text"
+          type="number"
           label="Bed"
           placeholder="Enter the number of bed in the property"
           validators={[VALIDATOR_REQUIRE()]}
@@ -120,7 +152,7 @@ const AddProperty = () => {
         <Input
           id="bath"
           element="input"
-          type="text"
+          type="number"
           label="Bath"
           placeholder="Enter the number of bath in the property"
           validators={[VALIDATOR_REQUIRE()]}
@@ -131,16 +163,17 @@ const AddProperty = () => {
         <Input
           id="measurement"
           element="input"
-          type="text"
+          type="number"
           label="Measurement"
           placeholder="Enter the room measurement of the property"
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter the room measurement of the property here."
           onInput={inputHandler}
         />
+       <Button className="text-white bg-green-500">Submit</Button>
       </form>
     </div>
   );
 };
 
-export default AddProperty;
+export default PropertyForm;

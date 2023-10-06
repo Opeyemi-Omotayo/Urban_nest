@@ -8,6 +8,9 @@ import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -17,23 +20,25 @@ export default function App({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
-      {router.pathname.includes("dashboard") ? null : <Header />}
-      <Component {...pageProps} />
-      <Footer />
-      <ToastContainer
-        position="top-right"
-        transition={Slide}
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </main>
+    <QueryClientProvider client={queryClient}>
+      <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
+        {router.pathname.includes("dashboard") ? null : <Header />}
+        <Component {...pageProps} />
+        <Footer />
+        <ToastContainer
+          position="top-right"
+          transition={Slide}
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+      </main>
+    </QueryClientProvider>
   );
 }

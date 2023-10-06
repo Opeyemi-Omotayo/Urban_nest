@@ -62,7 +62,11 @@ const Input = (props:any) => {
           onChange={changeHandler}
           onBlur={touchHandler}
           value={inputState.value}
-          className="form_input form_inp"
+          className={`${
+            !inputState.isValid &&
+            inputState.isTouched &&
+            "bg-red-200 border-red-600"
+          } h-[32px] bg-gray-100 border rounded-md p-6 outline-none`}
         />
       ) ;
       break;
@@ -85,7 +89,11 @@ const Input = (props:any) => {
           onChange={changeHandler}
           onBlur={touchHandler}
           value={inputState.value}
-          className="form_input form_select form_options"
+          className={`${
+            !inputState.isValid &&
+            inputState.isTouched &&
+            "bg-red-200 border-red-600"
+          } h-[32px] bg-gray-100 border rounded-md p-6 outline-none`}
         >
           {props.options.map((option:any) => (
             <option key={option.value} value={option.value} >
@@ -113,15 +121,15 @@ const Input = (props:any) => {
   }
 
   return (
-    <div
-      className={`waitlist_post ${!inputState.isValid &&
-        inputState.isTouched &&
-        'waitlist_post--invalid'}`}
-    >
-      <label className="form_label" htmlFor={props.id}>{props.label}</label>
-      {inputElement}
-      {!inputState.isValid && inputState.isTouched && <p>{props.errorText}</p>}
-    </div>
+     <div  className={`w-full flex flex-col mb-5`}>
+     <label  className={`${
+         !inputState.isValid && inputState.isTouched && "text-red-600"
+       }`} htmlFor={props.id}>{props.label}</label>
+    {inputElement}
+     {!inputState.isValid && inputState.isTouched && <p className={`${
+           !inputState.isValid && inputState.isTouched && "text-red-600 text-xs lg:text-sm"
+         }`}>{props.errorText}</p>}
+   </div>
   );
 };
 

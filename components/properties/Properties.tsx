@@ -9,22 +9,22 @@ const Properties = () => {
   const [filteredProperties, setFilteredProperties] = useState<PropertyTypes[] | null>(null);
 
   useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        let { data, error } = await Supabase.from('properties').select();
-        if (error) {
-          console.error("Error fetching data from Supabase:", error);
-        } else {
-          setProperties(data);
-          setFilteredProperties(data);
-        }
-      } catch (err) {
-        console.error("An error occurred:", err);
-      }
-    };
-  
     fetchProperties();
   }, []);
+
+  const fetchProperties = async () => {
+    try {
+      let { data, error } = await Supabase.from('properties').select();
+      if (error) {
+        console.error("Error fetching data from Supabase:", error);
+      } else {
+        setProperties(data);
+        setFilteredProperties(data);
+      }
+    } catch (err) {
+      console.error("An error occurred:", err);
+    }
+  };
 
   const handleFilter = (value: string) => {
     setActiveFilter(value);
