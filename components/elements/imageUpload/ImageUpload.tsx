@@ -54,7 +54,7 @@ const ImageUpload: React.FC<ImageUploadProps> = (props) => {
         <div className={` ${props.center && 'flex items-center justify-center flex-col'}`}>
           <div className="h-[120px] w-full">
             {previewUrl && <img src={previewUrl} className='h-[120px] w-full' alt="Preview" />}
-            {!previewUrl && <p className='text-sm' onClick={pickImageHandler}>click to upload</p>}
+            {!previewUrl &&  <p className='text-sm cursor-pointer text-center' onClick={pickImageHandler}>click here to upload!</p>}
           </div>
         </div>
       </div>

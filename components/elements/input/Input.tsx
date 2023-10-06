@@ -90,13 +90,11 @@ const Input = (props:any) => {
           onBlur={touchHandler}
           value={inputState.value}
           className={`${
-            !inputState.isValid &&
-            inputState.isTouched &&
-            "bg-red-200 border-red-600"
+            (!inputState.isValid && inputState.isTouched) ? "bg-red-200 border-red-600" : ""
           } h-[32px] bg-gray-100 border rounded-md p-6 outline-none`}
         >
           {props.options.map((option:any) => (
-            <option key={option.value} value={option.value} >
+            <option key={option.value} value={option.value}>
               {option.displayValue}
             </option>
           ))}

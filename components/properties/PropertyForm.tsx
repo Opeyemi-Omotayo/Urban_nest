@@ -4,6 +4,7 @@ import { VALIDATOR_REQUIRE } from "@/validation/Validation";
 import { useForm } from "@/hooks/useForm";
 import Button from "../elements/button/Button";
 import Supabase from "../supabase/supabase";
+import ImageUpload from "../elements/imageUpload/imageUpload";
 
 const PropertyForm = () => {
   const [formState, inputHandler] = useForm(
@@ -44,7 +45,7 @@ const PropertyForm = () => {
     false
   );
 
-  const inputData = {
+const inputData = {
     name: formState.inputs.name?.value,
     propertyType: formState.inputs.propertyType?.value,
     propertyInfo: formState.inputs.propertyInfo?.value,
@@ -170,7 +171,16 @@ const PropertyForm = () => {
           errorText="Please enter the room measurement of the property here."
           onInput={inputHandler}
         />
-       <Button className="text-white bg-green-500">Submit</Button>
+        <div>
+            <label className="pb-8">Image</label>
+            <ImageUpload
+              center
+              id="image"
+              onInput={inputHandler}
+              errorText="Please provide an image."
+            />
+          </div>
+       <Button className="text-white bg-green-500 mt-8">Submit</Button>
       </form>
     </div>
   );
