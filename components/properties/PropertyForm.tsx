@@ -4,7 +4,7 @@ import { VALIDATOR_REQUIRE } from "@/validation/Validation";
 import { useForm } from "@/hooks/useForm";
 import Button from "../elements/button/Button";
 import Supabase from "../supabase/supabase";
-import ImageUpload from "../elements/imageUpload/imageUpload";
+import Image from "../elements/imageUpload/Image";
 
 const PropertyForm = () => {
   const [formState, inputHandler] = useForm(
@@ -173,7 +173,7 @@ const inputData = {
         />
         <div>
             <label className="pb-8">Image</label>
-            <ImageUpload
+            <Image
               center
               id="image"
               onInput={inputHandler}

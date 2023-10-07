@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ImageUploadProps } from '@/types/types';
 
-const ImageUpload: React.FC<ImageUploadProps> = (props) => {
+const Image: React.FC<ImageUploadProps> = (props) => {
   const [file, setFile] = useState<File | undefined>();
   const [previewUrl, setPreviewUrl] = useState<string | undefined>();
   const [isValid, setIsValid] = useState<boolean>(false);
@@ -63,4 +63,4 @@ const ImageUpload: React.FC<ImageUploadProps> = (props) => {
   );
 };
 
-export default ImageUpload;
+export default Image;
