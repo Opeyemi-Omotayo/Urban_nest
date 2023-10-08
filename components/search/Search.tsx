@@ -9,7 +9,7 @@ const Search = () => {
 
   const handleSearch = () => {
     const query = {
-      listing,
+        listing,
       location,
     };
 

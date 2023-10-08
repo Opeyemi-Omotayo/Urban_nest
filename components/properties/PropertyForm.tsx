@@ -17,7 +17,7 @@ const PropertyForm = () => {
         value: "",
         isValid: false,
       },
-      propertyInfo: {
+      listing: {
         value: "",
         isValid: false,
       },
@@ -48,7 +48,7 @@ const PropertyForm = () => {
 const inputData = {
     name: formState.inputs.name?.value,
     propertyType: formState.inputs.propertyType?.value,
-    propertyInfo: formState.inputs.propertyInfo?.value,
+    listing: formState.inputs.listing?.value,
     location: formState.inputs.location?.value,
     bed: formState.inputs.bed?.value,
     bath: formState.inputs.bath?.value,
@@ -103,9 +103,9 @@ const inputData = {
           onInput={inputHandler}
         />
         <Input
-          id="propertyInfo"
+          id="listing"
           element="select"
-          label="Property Info"
+          label="Listing"
           options={[
             { value: "", displayValue: "Enter the info of the property" },
             { value: "rent", displayValue: "Rent" },

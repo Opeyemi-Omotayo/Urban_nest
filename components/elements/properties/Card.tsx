@@ -1,18 +1,18 @@
-import { ItemsType } from '@/types/types';
+import { PropertyTypes } from '@/types/types';
 import React from 'react';
 import { BsFillGrid3X2GapFill, BsGeoAlt } from 'react-icons/bs';
 import { FaBath } from 'react-icons/fa';
 import { IoMdBed } from 'react-icons/io';
 import Link from 'next/link';
 
-const Card = ({ property }: { property: ItemsType }) => {
+const Card = ({ property }: { property: PropertyTypes }) => {
   return (
     <Link href={`/properties/details/${property.id}`}>
       <div className='bg-white rounded-md shadow-md' data-aos="fade-in">
         <div className="overflow-hidden rounded ">
           <div className="relative overflow-hidden">
             <img src={property.image} alt='house' className='h-[200px] w-full' />
-            <div className="absolute top-0 px-3 py-1 m-4 text-white capitalize bg-green-500 rounded start-0">{property.propertyInfo}</div>
+            <div className="absolute top-0 px-3 py-1 m-4 text-white capitalize bg-green-500 rounded start-0">{property.listing}</div>
             <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 capitalize bg-white rounded start-0">{property.propertyType}</div>
           </div>
           <div className="p-4 pb-0">

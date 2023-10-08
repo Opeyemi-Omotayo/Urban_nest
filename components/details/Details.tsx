@@ -92,7 +92,7 @@ const Details = ({ property }: any) => {
                   className="my-5 sm:my-0"
                 >
                   <Button className="animate-bounce bg-green-500 rounded-md w-36">
-                  {property.propertyInfo = 'rent' ? "Rent" : "Buy"} Now
+                  {property.listing = 'rent' ? "Rent" : "Buy"} Now
                   </Button>
                 </Link>
               </div>

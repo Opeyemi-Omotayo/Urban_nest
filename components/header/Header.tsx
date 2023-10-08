@@ -38,11 +38,11 @@ const Header = () => {
                 </div>
 
                 {/* mobile */}
-                <div className="flex items-center justify-between lg:hidden">
+                <div className="flex items-center justify-between lg:hidden ">
                         <h1 className="text-xl font-bold ">Urban Nest</h1>
                     <ul
                         onClick={() => setNav(!nav)}
-                        className={`absolute top-[63px] z-20 items-center w-full left-0 py-10  h-full ${nav ? "block" : "hidden"
+                        className={`absolute bg-white h-[80vh] top-[63px] z-20 items-center w-full left-0 py-10 ${nav ? "block" : "hidden"
                             }`}
                     >
                         <Navigation />

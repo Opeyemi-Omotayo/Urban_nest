@@ -21,24 +21,24 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
-        {router.pathname.includes("dashboard") ? null : <Header />}
-        <Component {...pageProps} />
-        <Footer />
-        <ToastContainer
-          position="top-right"
-          transition={Slide}
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
-      </main>
+    <main className="mt-8 bg-gray-50 lg:mt-0 font-Quicksand">
+      {router.pathname.includes("dashboard") ? null : <Header />}
+      <Component {...pageProps} />
+      <Footer />
+      <ToastContainer
+        position="top-right"
+        transition={Slide}
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </main>
     </QueryClientProvider>
   );
 }
