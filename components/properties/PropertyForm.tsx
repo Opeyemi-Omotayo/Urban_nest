@@ -45,7 +45,7 @@ const PropertyForm = () => {
     false
   );
 
-const inputData = {
+  const inputData = {
     name: formState.inputs.name?.value,
     propertyType: formState.inputs.propertyType?.value,
     listing: formState.inputs.listing?.value,
@@ -54,26 +54,32 @@ const inputData = {
     bath: formState.inputs.bath?.value,
     measurement: formState.inputs.measurement?.value,
     price: formState.inputs.price?.value,
-    image: formState.inputs.image?.value,
-}
+  };
 
-  
-
-  const addProperty = async(e: any) => {
+  const addProperty = async (e: any) => {
     e.preventDefault();
-    try {
-        let { data, error } = await Supabase.from('properties').insert(inputData);
-        if (error) {
-          console.error("Error fetching data from Supabase:", error);
-        } else {
-            console.log('Data inserted successfully:', data);
-        }
-      } catch (err) {
-        console.error("An error occurred:", err);
-      }
-  }
+    //try {
+     // let { data, error } = await Supabase.from("properties").insert(inputData);
+      //if (error) {
+       // console.error("Error fetching data from Supabase:", error);
+     // } else {
+       // console.log("Data inserted successfully:", data);
+     // }
+    //} catch (err) {
+     // console.error("An error occurred:", err);
+    //}
 
-  
+    try {
+      let { data, error } = await Supabase.storage
+        .from("images")
+        .upload(`avatar_${Date.now()}.png`, formState.inputs.image?.value);
+      if (error) {
+        console.error("Error sending image to Supabase:", error);
+      } else {
+        console.log(data);
+      }
+    } catch (err) {}
+  };
 
   return (
     <div>
@@ -172,15 +178,15 @@ const inputData = {
           onInput={inputHandler}
         />
         <div>
-            <label className="pb-8">Image</label>
-            <Image
-              center
-              id="image"
-              onInput={inputHandler}
-              errorText="Please provide an image."
-            />
-          </div>
-       <Button className="text-white bg-green-500 mt-8">Submit</Button>
+          <label className="pb-8">Image</label>
+          <Image
+            center
+            id="image"
+            onInput={inputHandler}
+            errorText="Please provide an image."
+          />
+        </div>
+        <Button className="text-white bg-green-500 mt-8">Submit</Button>
       </form>
     </div>
   );
