@@ -6,6 +6,10 @@ import { IoMdBed } from 'react-icons/io';
 import Link from 'next/link';
 
 const Card = ({ property }: { property: PropertyTypes }) => {
+  if (!property) {
+    return <div>No properties available</div>;
+  }
+
   return (
     <Link href={`/properties/details/${property.id}`}>
       <div className='bg-white rounded-md shadow-md' data-aos="fade-in">

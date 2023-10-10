@@ -2,47 +2,26 @@ import React, { useState, useEffect } from "react";
 import Card from "../elements/properties/Card";
 import { PropertyTypes } from "@/types/types";
 import Supabase from "../supabase/supabase";
-import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
 const Properties = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [properties, setProperties] = useState<null | any>(null);
-  const [filteredProperties, setFilteredProperties] = useState<
-    PropertyTypes[] | null
-  >(null);
-  const router = useRouter();
-  const { listing, location } = router.query;
+  const [filteredProperties, setFilteredProperties] = useState<PropertyTypes[] | null>(null);
 
   useEffect(() => {
     fetchProperties();
-    fetchQueryProperties();
-    handleFilter("all");
-
   }, []);
-
-  const fetchQueryProperties = async () => {
-    try {
-      let { data, error } = await Supabase.from("properties")
-        .select("*")
-        .eq("location", location);
-        setFilteredProperties(data);
-    } catch (error) {
-      toast.error("An error occured fetching properties!");
-    }
-  };
 
   const fetchProperties = async () => {
     try {
       let { data, error } = await Supabase.from("properties").select();
       if (error) {
         toast.error("Error fetching data from Supabase");
-      } else if(!location && !listing) {
-        setFilteredProperties(data);
       } else {
         setProperties(data);
+        setFilteredProperties(data);
       }
-
     } catch (err) {
       toast.error("An error occurred");
     }
@@ -51,41 +30,16 @@ const Properties = () => {
   const handleFilter = (value: string) => {
     setActiveFilter(value);
   
-    if (value === "all" && !listing && !location) {
+    if (value === "all") {
       setFilteredProperties(properties);
-    } else if (value === "all" && listing && location) {
-      setFilteredProperties(
-        properties?.filter(
-          (property: any) =>
-            property?.location?.toLowerCase() === location
-        )
-      );    
-    } else if (listing && location) {
-      setFilteredProperties(
-        properties?.filter(
-          (property: any) =>
-            property?.listing?.toLowerCase() === value.toLowerCase() &&
-            property?.location?.toLowerCase() === location
-        )
-      );
-    } else if (listing) {
-      setFilteredProperties(
-        properties?.filter(
-          (property: any) =>
-            property?.listing?.toLowerCase() === value.toLowerCase()
-        )
-      );
     } else {
       setFilteredProperties(
-        properties?.filter(
-          (property: any) =>
-            property?.location?.toLowerCase() === location &&
-            property?.listing?.toLowerCase() === value.toLowerCase()
+        properties.filter(
+          (property:any) => property?.listing?.toLowerCase() === value.toLowerCase()
         )
       );
     }
   };
-  
   
 
   return (
