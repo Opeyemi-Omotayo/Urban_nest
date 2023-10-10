@@ -88,7 +88,7 @@ const Details = ({ property }: any) => {
                   ${property?.price}.00
                 </p>
                 <Link
-                  href={`/properties/details/${property?.id}/payment`}
+                  href={`/properties/details/${property?.id}/enquiry`}
                   className="my-5 sm:my-0"
                 >
                   <Button className="animate-bounce bg-green-500 rounded-md w-36">
@@ -102,23 +102,6 @@ const Details = ({ property }: any) => {
           <section className="">
             <Testimonial />
           </section>
-
-          {/* <section className="pt-7">
-            <h4 className="text-text font-medium text-lg py-5">
-              Recent Properties
-            </h4>
-            <div className="lg:grid grid-cols-4 flex space-x-5 xl:overflow-hidden overflow-x-auto">
-              <Properties />
-            </div>
-          </section>
-          <section className="py-7">
-            <h4 className="text-text font-medium text-lg py-5">
-              Recommended Properties
-            </h4>
-            <div className="sm:grid xl:grid-cols-4 sm:grid-cols-2 flex flex-col gap-x-5 gap-y-7">
-              <Properties />
-            </div>
-          </section> */}
         </>
       )}
     </main>
