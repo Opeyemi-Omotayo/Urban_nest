@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Properties from "@/components/properties/Properties";
 import { Sliderify } from "react-sliderify";
 import Supabase from "@/components/supabase/supabase";
 import Card from "@/components/elements/properties/Card";
+import { toast } from "react-toastify";
 
 const Rentals = () => {
     const [properties, setProperties] = useState<null | any>(null);
@@ -11,13 +11,12 @@ const Rentals = () => {
           try {
             let { data, error } = await Supabase.from('properties').select();
             if (error) {
-              console.error("Error fetching data from Supabase:", error);
+              toast.error("Error fetching data from Supabase");
             } else {
               setProperties(data);
-              console.log(data);
             }
           } catch (err) {
-            console.error("An error occurred:", err);
+            toast.error("An error occurred");
           }
         };
       

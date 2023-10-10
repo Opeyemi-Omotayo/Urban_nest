@@ -17,7 +17,6 @@ const Index = () => {
           .eq("id", id)
           .single()
         setProperty(data);
-        console.log(error, "err");
       }
     };
     fetchPropertyDetails();

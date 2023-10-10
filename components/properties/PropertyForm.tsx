@@ -5,6 +5,7 @@ import { useForm } from "@/hooks/useForm";
 import Button from "../elements/button/Button";
 import Supabase from "../supabase/supabase";
 import Image from "../elements/imageUpload/Image";
+import { toast } from "react-toastify";
 
 const PropertyForm = () => {
   const [formState, inputHandler] = useForm(
@@ -63,13 +64,13 @@ const PropertyForm = () => {
         .from("images")
         .upload(`property_${Date.now()}.png`, file);
       if (error) {
-        console.error("Error uploading image to Supabase:", error);
+        toast.error("Error uploading image to Supabase");
       } else {
         const uploadedImageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/${data.path}`;
         return uploadedImageUrl;
     }
     } catch (err) {
-      console.error("An error occurred:", err);
+      toast.error("An error occurred!");
       return null; 
     }
   };
@@ -87,20 +88,20 @@ const PropertyForm = () => {
           image: uploadedImageUrl,
         };
   
-        const { data: propertyData, error: propertyError } = await Supabase
+        const { data, error } = await Supabase
           .from("properties")
           .insert([propertyDataWithImage]);
   
-        if (propertyError) {
-          console.error("Error inserting property data into Supabase:", propertyError);
+        if (error) {
+          toast.error("Error inserting property data into Supabase");
         } else {
-          console.log("Property data inserted successfully:", propertyData);
+          toast("Property data inserted successfully");
         }
       } else {
-        console.error("Image upload failed.");
+        toast.error("Image upload failed.");
       }
     } catch (err) {
-      console.error("An error occurred:", err);
+      toast.error("An error occurred");
     }
   };
   

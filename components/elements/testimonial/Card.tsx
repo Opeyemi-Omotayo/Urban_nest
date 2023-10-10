@@ -5,6 +5,7 @@ import {
 } from "react-icons/bs";
 import { Sliderify } from "react-sliderify";
 import Supabase from "@/components/supabase/supabase";
+import { toast } from "react-toastify";
 
 const Card = () => {
   const [testimonials, setTestimonials] = useState<null | any>(null);
@@ -13,12 +14,12 @@ const Card = () => {
       try {
         let { data, error } = await Supabase.from("testimonial").select();
         if (error) {
-          console.error("Error fetching data from Supabase:", error);
+          toast.error("Error fetching data from Supabase");
         } else {
           setTestimonials(data);
         }
       } catch (err) {
-        console.error("An error occurred:", err);
+        toast.error("An error occurred");
       }
     };
     fetchTestimonials();

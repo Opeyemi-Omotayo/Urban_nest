@@ -3,6 +3,7 @@ import Card from "../elements/properties/Card";
 import { PropertyTypes } from "@/types/types";
 import Supabase from "../supabase/supabase";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 const Properties = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -27,7 +28,7 @@ const Properties = () => {
         .eq("location", location);
         setFilteredProperties(data);
     } catch (error) {
-      console.log(error);
+      toast.error("An error occured fetching properties!");
     }
   };
 
@@ -35,7 +36,7 @@ const Properties = () => {
     try {
       let { data, error } = await Supabase.from("properties").select();
       if (error) {
-        console.error("Error fetching data from Supabase:", error);
+        toast.error("Error fetching data from Supabase");
       } else if(!location && !listing) {
         setFilteredProperties(data);
       } else {
@@ -43,7 +44,7 @@ const Properties = () => {
       }
 
     } catch (err) {
-      console.error("An error occurred:", err);
+      toast.error("An error occurred");
     }
   };
 
