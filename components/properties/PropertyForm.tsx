@@ -54,32 +54,56 @@ const PropertyForm = () => {
     bath: formState.inputs.bath?.value,
     measurement: formState.inputs.measurement?.value,
     price: formState.inputs.price?.value,
+    image: formState.inputs.image?.value
   };
 
-  const addProperty = async (e: any) => {
-    e.preventDefault();
-    //try {
-     // let { data, error } = await Supabase.from("properties").insert(inputData);
-      //if (error) {
-       // console.error("Error fetching data from Supabase:", error);
-     // } else {
-       // console.log("Data inserted successfully:", data);
-     // }
-    //} catch (err) {
-     // console.error("An error occurred:", err);
-    //}
-
+  const handleImageUpload = async (file:any) => {
     try {
-      let { data, error } = await Supabase.storage
+      const { data, error } = await Supabase.storage
         .from("images")
-        .upload(`avatar_${Date.now()}.png`, formState.inputs.image?.value);
+        .upload(`property_${Date.now()}.png`, file);
       if (error) {
-        console.error("Error sending image to Supabase:", error);
+        console.error("Error uploading image to Supabase:", error);
       } else {
-        console.log(data);
-      }
-    } catch (err) {}
+        const uploadedImageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/${data.path}`;
+        return uploadedImageUrl;
+    }
+    } catch (err) {
+      console.error("An error occurred:", err);
+      return null; 
+    }
   };
+  
+
+  const addProperty = async (e:any) => {
+    e.preventDefault();
+  
+    try {
+      const uploadedImageUrl = await handleImageUpload(formState.inputs.image?.value);
+  
+      if (uploadedImageUrl) {
+        const propertyDataWithImage = {
+          ...inputData,
+          image: uploadedImageUrl,
+        };
+  
+        const { data: propertyData, error: propertyError } = await Supabase
+          .from("properties")
+          .insert([propertyDataWithImage]);
+  
+        if (propertyError) {
+          console.error("Error inserting property data into Supabase:", propertyError);
+        } else {
+          console.log("Property data inserted successfully:", propertyData);
+        }
+      } else {
+        console.error("Image upload failed.");
+      }
+    } catch (err) {
+      console.error("An error occurred:", err);
+    }
+  };
+  
 
   return (
     <div>
