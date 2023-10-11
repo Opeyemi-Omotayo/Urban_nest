@@ -31,12 +31,12 @@ const Details = ({ property }: any) => {
                   className="rounded-md px-3 border-green-500 w-[96px] h-[64px] sm:w-[210px] sm:h-[124px]"
                 />
                 <img
-                  src="https://as2.ftcdn.net/v2/jpg/05/20/95/15/1000_F_520951560_wsyQWuCg4W8Pg5BE4WlrFb5m1d3yWnoY.jpg"
+                  src="https://as2.ftcdn.net/v2/jpg/05/20/95/15/1000_F_520951560_wsyQWuCg4W8Pg5BE4WlrFb5m1d3yWnoY.jpg?w=1500"
                   alt="view property"
                   className="rounded-md w-[96px] h-[64px] sm:w-[148px] sm:h-[124px]"
                 />
                 <img
-                  src="https://t4.ftcdn.net/jpg/02/32/58/45/240_F_232584505_TClqLckDs1d3EfY4f9m9R99JZ8CiEEjY.jpg"
+                  src="https://t4.ftcdn.net/jpg/02/32/58/45/240_F_232584505_TClqLckDs1d3EfY4f9m9R99JZ8CiEEjY.jpg?w=1500"
                   alt="view property"
                   className="rounded-md w-[96px] h-[64px] sm:w-[148px] sm:h-[124px]"
                 />

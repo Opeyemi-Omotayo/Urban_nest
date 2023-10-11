@@ -91,7 +91,7 @@ const Input = (props:any) => {
           value={inputState.value}
           className={`${
             (!inputState.isValid && inputState.isTouched) ? "bg-red-200 border-red-600" : ""
-          } h-[32px] bg-gray-100 border rounded-md p-6 outline-none`}
+          } h-[52px] bg-gray-100 border rounded-md px-6 outline-none text-gray-400`}
         >
           {props.options.map((option:any) => (
             <option key={option.value} value={option.value}>

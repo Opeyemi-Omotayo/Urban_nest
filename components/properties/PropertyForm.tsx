@@ -211,7 +211,7 @@ const PropertyForm = () => {
             errorText="Please provide an image."
           />
         </div>
-        <Button className="text-white bg-green-500 mt-8">Submit</Button>
+        <Button className="text-white bg-green-500 mt-8 disabled:cursor-not-allowed" disabled={!formState.isValid}>Submit</Button>
       </form>
     </div>
   );
