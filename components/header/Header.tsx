@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <>
-            <nav id="header" className="mt-[35px] z-[9999] mx-4 lg:mx-8 xl:mx-12 2xl:mx-16 relative transition-all duration-500 ">
+            <nav id="header" className="pt-[35px] z-[9999] mx-4 lg:mx-8 xl:mx-12 2xl:mx-16 relative transition-all duration-500 ">
                 <section className="px-4 py-4 bg-white rounded-sm shadow-lg lg:py-0 lg:px-6">
                 <div className="items-center justify-between hidden py-4 lg:flex">
                     <h1 className="text-2xl ">

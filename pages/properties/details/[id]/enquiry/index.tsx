@@ -2,6 +2,7 @@ import Enquiry from "@/components/enquiry/Enquiry";
 import Supabase from "@/components/supabase/supabase";
 import { useRouter } from "next/router";
 import React from "react";
+import Head from "next/head";
 
 const Index = () => {
   const router = useRouter();
@@ -23,7 +24,12 @@ const Index = () => {
   }, [id]);
 
   return (
-    <div className="bg-gray-100 mt-6 lg:mt-0">
+    <div className=" mt-6 lg:mt-0">
+        <Head>
+        <title>Urban Nest || Enquiry</title>
+        <meta name="description" content="The Best Platform for real estate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Enquiry property={property} />
     </div>
   );

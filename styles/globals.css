@@ -20,5 +20,18 @@
     left: -1rem;
     right: -1rem;
   }
-  
+}
+
+@media screen and (min-width: 1280px) {
+  .fixed {
+    left: -3rem;
+    right: -3rem;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .fixed {
+    left: -4rem;
+    right: -4rem;
+  }
 }

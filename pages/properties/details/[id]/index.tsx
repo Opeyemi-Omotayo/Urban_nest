@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useRouter } from "next/router";
 import Supabase from "@/components/supabase/supabase";
 import Details from "@/components/details/Details";
+import Head from "next/head";
 
 
 const Index = () => {
@@ -24,6 +25,11 @@ const Index = () => {
   
   return (
     <main >
+      <Head>
+        <title>Urban Nest || Property Details</title>
+        <meta name="description" content="The Best Platform for real estate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Details property={property}/>
     </main>
   );
