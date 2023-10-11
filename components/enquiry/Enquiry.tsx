@@ -1,18 +1,43 @@
-import React from "react";
+import React, { useState} from "react";
 import { AiOutlineSafety, AiFillStar } from "react-icons/ai";
 import Button from "../elements/button/Button";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import Supabase from "../supabase/supabase";
 
 const Enquiry = ({ property }: any) => {
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    phone_number: "",
+    address: "",
+    town: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("We will get back to you soon! ");
-    setTimeout(() => {
-      router.push("/");
-    }, 1500);
+
+    const { data, error } = await Supabase
+          .from("enquiries")
+          .insert([formData]);
+  
+        if (error) {
+          toast.error("Error sending details to Supabase");
+        } else {
+            toast.success("We will get back to you soon! ");
+            setTimeout(() => {
+              router.push("/");
+            }, 1500);
+        
+        }
   };
 
   const tax = 5;
@@ -32,6 +57,9 @@ const Enquiry = ({ property }: any) => {
             <label className="flex flex-col font-medium ">
               Name
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 placeholder="Your name"
                 required
                 className="my-3 rounded-lg bg-gray-100 p-4"
@@ -40,6 +68,9 @@ const Enquiry = ({ property }: any) => {
             <label className="flex flex-col font-medium ">
               Phone Number
               <input
+                name="phone_number"
+                value={formData.phone_number}
+                onChange={handleInputChange}
                 type="number"
                 placeholder="Phone Number"
                 required
@@ -49,6 +80,9 @@ const Enquiry = ({ property }: any) => {
             <label className="flex flex-col font-medium ">
               Address
               <input
+                name="address"
+                value={formData.address}
+                onChange={handleInputChange}
                 placeholder="Address"
                 required
                 className="my-3 rounded-lg bg-gray-100 p-4"
@@ -57,6 +91,9 @@ const Enquiry = ({ property }: any) => {
             <label className="flex flex-col font-medium ">
               Town/City
               <input
+                name="town"
+                value={formData.town}
+                onChange={handleInputChange}
                 placeholder="Town/City"
                 required
                 className="my-3 rounded-lg bg-gray-100 p-4"
@@ -80,7 +117,6 @@ const Enquiry = ({ property }: any) => {
             <label className="flex items-center font-medium sm:text-base text-sm bg-input py-2 px-4 rounded-xl">
               <input
                 type="checkbox"
-                required
                 className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-10 h-10 mr-3"
               />
               I agree with receiving newsletter emails. No spam, promised!
@@ -118,10 +154,10 @@ const Enquiry = ({ property }: any) => {
             <img
               src={property?.image}
               alt="property"
-              className="rounded-md px-3 border-primary w-[190px] h-[100px] sm:w-[210px] sm:h-[124px]"
+              className="rounded-md px-3 border-green-500 w-[190px] h-[100px] sm:w-[210px] sm:h-[124px]"
             />
             <div>
-              <h3 className="sm:text-2xl text-xl font-bold">{property?.name}</h3>
+              <h3 className="sm:text-2xl text-xl font-bold capitalize">{property?.name}</h3>
               <div className="flex items-center">
               <div className="flex items-center text-yellow-500 pt-4">
                     <AiFillStar/>
@@ -138,7 +174,7 @@ const Enquiry = ({ property }: any) => {
           <div className="">
             <div className="flex justify-between text-lg">
               <p className=" text-text">Subtotal</p>
-              <p className="font-bold">${property?.price}.00</p>
+              <p className="font-bold">${property?.price.toLocaleString('en-US')}.00</p>
             </div>
             <div className="flex justify-between text-lg py-5">
               <p className="text-text">Tax</p>
@@ -152,7 +188,7 @@ const Enquiry = ({ property }: any) => {
                 </p>
               </div>
               <p className="text-2xl font-bold sm:py-0 py-2">
-                ${property?.price + tax}
+                ${(property?.price + tax).toLocaleString('en-US')}.00
               </p>
             </div>
           </div>

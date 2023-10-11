@@ -85,7 +85,7 @@ const Details = ({ property }: any) => {
 
               <div className="flex sm:flex-row flex-col justify-between">
                 <p className="text-xl font-bold">
-                  ${property?.price}.00
+                  ${property?.price.toLocaleString('en-US')}.00
                 </p>
                 <Link
                   href={`/properties/details/${property?.id}/enquiry`}

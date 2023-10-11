@@ -6,7 +6,7 @@ export type PropertyTypes = {
     bed: number;
     bath: number;
     measurement: number;
-    price: string;
+    price: number;
     image: string;
     id: number;
 }

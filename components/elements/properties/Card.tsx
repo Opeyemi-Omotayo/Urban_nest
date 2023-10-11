@@ -20,7 +20,7 @@ const Card = ({ property }: { property: PropertyTypes }) => {
             <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 capitalize bg-white rounded start-0">{property.propertyType}</div>
           </div>
           <div className="p-4 pb-0">
-            <h5 className="mb-3 font-semibold text-green-500">${property.price}</h5>
+            <h5 className="mb-3 font-semibold text-green-500">${property.price.toLocaleString('en-US')}</h5>
             <h1 className="block mb-2 text-lg font-bold capitalize">{property.name}</h1>
             <p className='flex items-center pb-4 text-gray-800'><BsGeoAlt className="text-green-500 me-2" />{property.location}</p>
           </div>
