@@ -164,7 +164,7 @@ const PropertyForm = () => {
         <Input
           id="price"
           element="input"
-          type="text"
+          type="number"
           label="Price"
           placeholder="Enter the price of the property"
           validators={[VALIDATOR_REQUIRE()]}
