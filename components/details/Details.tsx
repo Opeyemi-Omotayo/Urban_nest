@@ -6,7 +6,7 @@ import { FaBath } from "react-icons/fa";
 import { IoMdBed } from "react-icons/io";
 import { BsFillGrid3X2GapFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
- 
+
 const Details = ({ property }: any) => {
   return (
     <main className="px-4 lg:px-[6rem]">
@@ -45,18 +45,20 @@ const Details = ({ property }: any) => {
 
             <section className="lg:w-5/12 h-fit p-5 bg-white rounded-xl flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-bold capitalize">{property?.name}</h3>
+                <h3 className="text-3xl font-bold capitalize">
+                  {property?.name}
+                </h3>
                 <div className="flex text-yellow-500 pt-4">
-                    <AiFillStar/>
-                    <AiFillStar/>
-                    <AiFillStar/>
-                    <AiFillStar/>
-                    <AiFillStar/>
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
                 </div>
                 <p className=" font-light text-lg">
-                <span className="capitalize">{property?.name}</span> is the new Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit. Laboriosam alias recusandae,
-                  assumenda architecto quia illo!
+                  <span className="capitalize">{property?.name}</span> is the
+                  new Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Laboriosam alias recusandae, assumenda architecto quia illo!
                 </p>
                 <div className="grid grid-cols-2 gap-5 py-5">
                   <p className="text-text flex">
@@ -85,14 +87,14 @@ const Details = ({ property }: any) => {
 
               <div className="flex sm:flex-row flex-col justify-between">
                 <p className="text-xl font-bold">
-                  ${property?.price.toLocaleString('en-US')}.00
+                  ${property?.price.toLocaleString("en-US")}.00
                 </p>
                 <Link
                   href={`/properties/details/${property?.id}/enquiry`}
                   className="my-5 sm:my-0"
                 >
                   <Button className="animate-bounce bg-green-500 rounded-md w-36">
-                  {property.listing = 'rent' ? "Rent" : "Buy"} Now
+                    {(property.listing = "rent" ? "Rent" : "Buy")} Now
                   </Button>
                 </Link>
               </div>

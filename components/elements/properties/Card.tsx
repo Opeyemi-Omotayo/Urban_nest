@@ -15,7 +15,7 @@ const Card = ({ property }: { property: PropertyTypes }) => {
       <div className='bg-white rounded-md shadow-md' data-aos="fade-in">
         <div className="overflow-hidden rounded ">
           <div className="relative overflow-hidden">
-            <img src={property.image} alt='house' className='h-[200px] w-full' />
+            <img src={property.image} alt='house' className='h-[200px] w-full transition ease-in-out delay-150 transform hover:scale-110 duration-300' />
             <div className="absolute top-0 px-3 py-1 m-4 text-white capitalize bg-green-500 rounded start-0">{property.listing}</div>
             <div className="absolute bottom-0 px-3 pt-1 mx-4 text-green-500 capitalize bg-white rounded start-0">{property.propertyType}</div>
           </div>
